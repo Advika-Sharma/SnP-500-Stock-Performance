@@ -3,9 +3,9 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 
+
 name: 'sp500_project'
 version: '1.0.0'
-
 
 
 # These configurations specify where dbt should look for different types of files.
