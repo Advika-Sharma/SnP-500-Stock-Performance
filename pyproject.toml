@@ -1,7 +1,7 @@
 [project]
 name = "sp500-stock-project"
 version = "0.1.0"
-description = "Add your description here"
+description = "Transforms raw S&P 500 stock price data into structured staging models in Snowflake using dbt"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
