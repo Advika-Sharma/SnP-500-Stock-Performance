@@ -1,7 +1,9 @@
 version: 2
 
 models:
-  - name: stg_stock_prices
+
+  - name: stg_stock_price
+
     description: "Staging model for SP500 stock prices with daily change and percent change calculations."
     columns:
       - name: ticker

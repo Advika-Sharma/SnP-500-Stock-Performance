@@ -22,5 +22,4 @@ final AS (
     FROM source_data
 )
 
-
 SELECT * FROM final
