@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fct_stock_performance
+    description: "Gold-layer analytical table with moving averages, volatility, 52-week high/low and other metrics."
+    columns:
+      - name: trade_date
+        description: "Date of the price observation."
+        tests:
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol."
+        tests:
+          - not_null
+      - name: close_price
+        description: "Closing price for the ticker on the trade_date."
+      - name: moving_avg_30d
+        description: "30-day moving average of close_price (ROWS BETWEEN 29 PRECEDING AND CURRENT ROW)."
+      - name: moving_avg_90d
+        description: "90-day moving average of close_price (ROWS BETWEEN 89 PRECEDING AND CURRENT ROW)."
+      - name: moving_avg_200d
+        description: "200-day moving average of close_price (ROWS BETWEEN 199 PRECEDING AND CURRENT ROW)."
+      - name: volatility_30d
+        description: "30-day rolling standard deviation of daily_percent_change (ROWS BETWEEN 29 PRECEDING AND CURRENT ROW)."
+      - name: high_52w
+        description: "Highest price observed for the ticker over the previous 365 days (ROWS BETWEEN 364 PRECEDING AND CURRENT ROW)."
+      - name: low_52w
+        description: "Lowest price observed for the ticker over the previous 365 days (ROWS BETWEEN 364 PRECEDING AND CURRENT ROW)."
+
+# Composite uniqueness test for primary key surrogate
+tests:
+  - dbt_utils.unique_combination_of_columns:
+      combination_of_columns:
+        - ticker
+        - trade_date
