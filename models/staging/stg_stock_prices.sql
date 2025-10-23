@@ -23,8 +23,7 @@ final AS (
 )
 
 
-<<<<<<< HEAD
+
+
 SELECT * FROM final
-=======
-SELECT * FROM final
->>>>>>> 197b90b395711154c76fbf8876427834c4e2492e
+
