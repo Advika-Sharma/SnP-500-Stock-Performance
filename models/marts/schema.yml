@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fct_stock_performance
+    description: "Gold layer model with moving averages, volatility, and 52-week high/low for each stock."
+    columns:
+      - name: trade_date
+        description: "Trading date"
+        tests:
+          - not_null
+      - name: ticker
+        description: "Stock ticker"
+        tests:
+          - not_null
+      - name: close_price
+        description: "Closing price of the stock"
+      - name: moving_avg_30d
+        description: "30-day moving average of closing price"
+      - name: moving_avg_90d
+        description: "90-day moving average of closing price"
+      - name: moving_avg_200d
+        description: "200-day moving average of closing price"
+      - name: volatility_30d
+        description: "30-day rolling standard deviation of daily percent change"
+      - name: high_52w
+        description: "Highest price over the past 52 weeks"
+      - name: low_52w
+        description: "Lowest price over the past 52 weeks"
