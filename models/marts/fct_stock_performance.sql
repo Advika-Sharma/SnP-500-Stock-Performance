@@ -21,7 +21,6 @@ SELECT
     volume,
     daily_percent_change,
 
-    -- Moving averages
     AVG(close_price) OVER (
         PARTITION BY ticker
         ORDER BY trade_date
@@ -40,14 +39,13 @@ SELECT
         ROWS BETWEEN 199 PRECEDING AND CURRENT ROW
     ) AS moving_avg_200d,
 
-    -- Volatility: 30-day rolling stddev of daily percent change
     STDDEV(daily_percent_change) OVER (
         PARTITION BY ticker
         ORDER BY trade_date
         ROWS BETWEEN 29 PRECEDING AND CURRENT ROW
     ) AS volatility_30d,
 
-    -- 52-week high and low
+    
     MAX(high_price) OVER (
         PARTITION BY ticker
         ORDER BY trade_date
