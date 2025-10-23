@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DE_LUMINATE_RAW
+    schema: SP500_STOCK
+    tables:
+      - name: raw_stock_prices
+        description: "Raw SP500 stock price data including open, high, low, close, and volume."
+        
