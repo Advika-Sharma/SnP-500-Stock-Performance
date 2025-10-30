@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fct_stock_performance
+    description: "The Gold layer analytical model (Fact table) containing pre-calculated metrics for high-performance stock trend and risk analysis."
+    
+    columns:
+      - name: trade_date
+        description: "The primary date of the trade."
+        tests:
+          - not_null
+
+      - name: ticker 
+        description: "The unique stock identifier (partition key for window functions)."
+        tests:
+          - not_null
+      
+      - name: close_price
+        description: "The daily closing price (passthrough from staging)."
+      
+      - name: volume
+        description: "The daily trading volume (passthrough from staging)."
+      
+      - name: daily_percent_change
+        description: "Daily percentage change in closing price (passthrough from staging)."
+      
+      - name: moving_avg_30d
+        description: "30-day trailing moving average of the closing price."
+
+      - name: moving_avg_90d
+        description: "90-day trailing moving average of the closing price."
+
+      - name: moving_avg_200d
+        description: "200-day trailing moving average of the closing price."
+
+      - name: volatility_30d
+        description: "30-day rolling standard deviation (volatility) of the daily percentage change."
+      
+      - name: high_52w
+        description: "Highest price recorded over the last 52 weeks (365-day rolling max)."
+
+      - name: low_52w
+        description: "Lowest price recorded over the last 52 weeks (365-day rolling min)."
