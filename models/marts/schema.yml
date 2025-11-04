@@ -33,3 +33,22 @@ tests:
       combination_of_columns:
         - ticker
         - trade_date
+
+  - name: dim_company_metadata
+    description: "Dimension table containing company sector, industry, market cap, and other financial metadata sourced from S&P 500 company data."
+    columns:
+      - name: ticker
+        description: "Unique stock ticker symbol for each company."
+        tests:
+          - not_null
+          - unique
+      - name: sector
+        description: "Business sector classification (e.g., Technology, Healthcare, Finance)."
+      - name: industry
+        description: "More granular business industry classification."
+      - name: market_cap
+        description: "Market capitalization (total value of outstanding shares)."
+      - name: current_price
+        description: "Most recent stock price for the company."
+      - name: pe_ratio
+        description: "Price-to-Earnings ratio calculated as EBITDA / Market Cap."
