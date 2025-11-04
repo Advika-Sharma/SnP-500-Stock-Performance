@@ -7,7 +7,6 @@ sources:
     tables:
       - name: raw_stock_prices
         description: "Raw SP500 stock price data including open, high, low, close, and volume."
-<<<<<<< HEAD
-=======
 
->>>>>>> 197b90b395711154c76fbf8876427834c4e2492e
+
+

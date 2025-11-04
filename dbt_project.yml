@@ -8,6 +8,8 @@ name: 'sp500_project'
 version: '1.0.0'
 
 
+profile: 'sp500_stock_project'
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -33,5 +35,5 @@ models:
 
   sp500_project:
     # Config indicated by + and applies to all files under models/example/
-    # example:
-    #   +materialized: view
+    fct_stock_performance:
+      +materialized: table
