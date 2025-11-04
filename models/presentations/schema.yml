@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: v_volatility_analysis
+    description: "Analyzes 30-day volatility and 52-week price range."
+    columns:
+      - name: ticker
+        tests: [not_null]
+

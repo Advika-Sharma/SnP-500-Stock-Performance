@@ -26,10 +26,5 @@ tests:
       combination_of_columns:
         - ticker
         - trade_date
-<<<<<<< HEAD
-=======
 
 
-
-# the combination of (ticker, trade_date) is what makes each record unique
->>>>>>> 197b90b395711154c76fbf8876427834c4e2492e

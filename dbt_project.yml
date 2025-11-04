@@ -6,6 +6,7 @@
 
 name: 'sp500_project'
 version: '1.0.0'
+profile: 'sp500_stock_project'
 
 
 # These configurations specify where dbt should look for different types of files.
