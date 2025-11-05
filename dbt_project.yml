@@ -4,7 +4,9 @@
 # name or the intended use of these models
 
 
-name: 'sp500_project'
+profile: sp500_stock_project 
+
+name: 'sp500_stock_project'
 version: '1.0.0'
 
 
