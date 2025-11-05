@@ -3,6 +3,7 @@
 select
     f.ticker,
     c.sector,
+    c.ebitda,
     c.industry,
     c.market_cap,
     f.close_price as current_price,
