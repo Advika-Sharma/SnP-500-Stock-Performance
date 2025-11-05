@@ -7,6 +7,10 @@ sources:
     tables:
       - name: raw_stock_prices
         description: "Raw SP500 stock price data including open, high, low, close, and volume."
+      - name: companies_details_raw
+        description: "Raw SP500 companies data including sector and industry"
+
+
 
 
 
