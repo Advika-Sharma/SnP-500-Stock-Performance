@@ -1,0 +1,33 @@
+version: 2
+
+models:
+
+  - name: stg_stock_price
+
+    description: "Staging model for SP500 stock prices with daily change and percent change calculations."
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol (e.g., AAPL, MSFT, etc.)"
+        tests:
+          - not_null
+      - name: trade_date
+        description: "Date of the stock price record."
+        tests:
+          - not_null
+      - name: close_price
+        description: "Closing price of the stock for the day."
+      - name: daily_change
+        description: "Difference between today's close and the previous day's close."
+      - name: daily_percent_change
+        description: "Percentage change from the previous day's close."
+
+tests:
+  - dbt_utils.unique_combination_of_columns:
+      combination_of_columns:
+        - ticker
+        - trade_date
+
+
+
+
+# the combination of (ticker, trade_date) is what makes each record unique
