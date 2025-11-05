@@ -61,3 +61,4 @@ SELECT
 FROM base
 ORDER BY ticker, trade_date
 
+select * from calc  order by ticker, trade_date

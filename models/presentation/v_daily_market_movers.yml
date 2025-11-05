@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: v_daily_market_movers
+    description: "Shows top 10 daily gainers, losers, and most traded stocks for the latest trading day."
+    columns:
+      - name: ticker
+        tests: [not_null]
+      - name: category
+        tests: [not_null]
+        

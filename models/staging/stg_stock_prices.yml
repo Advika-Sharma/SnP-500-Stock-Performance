@@ -2,7 +2,9 @@ version: 2
 
 models:
 
+
   - name: stg_stock_prices
+
 
     description: "Staging model for SP500 stock prices with daily change and percent change calculations."
     columns:
@@ -26,5 +28,11 @@ tests:
       combination_of_columns:
         - ticker
         - trade_date
+
+
+
+
+
+# the combination of (ticker, trade_date) is what makes each record unique
 
 
