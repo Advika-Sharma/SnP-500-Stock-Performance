@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_company_details
+    description: "Staging model for Company Metadata"
+    columns:
+      - name: ticker
+        tests: [not_null]
