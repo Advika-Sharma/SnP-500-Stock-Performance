@@ -8,6 +8,7 @@ profile: sp500_stock_project
 
 name: 'sp500_stock_project'
 version: '1.0.0'
+profile: 'sp500_stock_project'
 
 profile: 'sp500_project'
 # These configurations specify where dbt should look for different types of files.
@@ -35,5 +36,5 @@ models:
 
   sp500_project:
     # Config indicated by + and applies to all files under models/example/
-    # example:
-    #   +materialized: view
+    fct_stock_performance:
+      +materialized: table

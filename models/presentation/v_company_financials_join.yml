@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: v_company_financials_join
+    description: Combined company and performance data for financial analysis
+    columns:
+      - name: ticker
+        tests: [not_null]
