@@ -7,9 +7,11 @@ WITH base AS (
         trade_date,
         ticker,
         close_price,
+        open_price,
         high_price,
         low_price,
         volume,
+        daily_change,
         daily_percent_change
     FROM {{ ref('stg_stock_prices') }}
 ),
