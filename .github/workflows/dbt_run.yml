@@ -1,0 +1,42 @@
+name: Run dbt Models in Snowflake
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run at 10:30 AM IST → 05:00 UTC
+    - cron: "0 5 * * *"
+  push:
+    branches:
+      - main  # ✅ only triggers after a successful merge to main
+
+jobs:
+  run_dbt:
+    runs-on: ubuntu-latest
+
+    env:
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dbt-snowflake
+        run: pip install dbt-snowflake
+
+      - name: Verify dbt version
+        run: dbt --version
+
+      - name: Test Snowflake connection
+        run: dbt debug --profiles-dir .github/workflows/utils
+
+      - name: Run dbt models
+        run: dbt run --profiles-dir .github/workflows/utils

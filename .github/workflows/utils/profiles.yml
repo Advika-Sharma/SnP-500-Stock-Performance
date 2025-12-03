@@ -1,0 +1,14 @@
+sp500_stock_project:
+  target: prod
+  outputs:
+    prod:
+      type: snowflake
+      threads: 8
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      database: "DE_LUMINATE_PROD"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      schema: "SP500_STOCK"
+      client_session_keep_alive: False
