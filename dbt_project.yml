@@ -1,16 +1,8 @@
-
-# Name your project! Project names should contain only lowercase characters
-# and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
-
-
-#profile: sp500_stock_project 
-
-name: 'sp500_stock_project'
+name: 'SnP-500-Stock-Performance'
 version: '1.0.0'
+
 profile: 'sp500_stock_project'
 
-#profile: 'sp500_project'
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -33,8 +25,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-
-  sp500_project:
-    # Config indicated by + and applies to all files under models/example/
-    # fct_stock_performance:
-    #   +materialized: table
+  SnP-500-Stock-Performance:
+      +materialized: table
