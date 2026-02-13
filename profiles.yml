@@ -1,0 +1,12 @@
+sp500_stock_project:
+  outputs:
+    dev:
+      account: 'not needed'
+      database: SP500_STOCK_DEV
+      warehouse: SP500_STOCK_WH
+      schema: dbt_KBOOLCHANDANI
+      role: ACCOUNTADMIN
+      type: snowflake
+      user: "not needed"
+  target: dev
+  
